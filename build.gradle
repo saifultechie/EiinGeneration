@@ -5,8 +5,7 @@ plugins {
 }
 
 group = 'com.eiin'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+version = 'api-v1'
 
 configurations {
 	compileOnly {
@@ -22,6 +21,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
+	compile('com.googlecode.json-simple:json-simple:1.1.1')
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.3.20.Final'
+
+//	compile "io.springfox:springfox-boot-starter:3.0.0"
+//	compile 'io.springfox:springfox-swagger-ui:2.6.1'
+//	compile "io.springfox:springfox-swagger2:3.0.0"
+//	compile "io.springfox:springfox-swagger-ui:3.0.0"
+	implementation "io.springfox:springfox-boot-starter:3.0.0"
+	compile "io.springfox:springfox-swagger-ui:3.0.0"
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	annotationProcessor 'org.projectlombok:lombok'
