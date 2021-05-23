@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,5 +15,8 @@ public class Eiin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToOne(fetch =FetchType.EAGER)
+    @JoinColumn(name = "division_id",nullable=false)
+    private Division division;
 
 }
